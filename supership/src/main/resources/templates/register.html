@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register New Account</title>
+</head>
+<body>
+    <h1>Register New Account</h1>
+    <form method="POST" action="/register"th:object="${registerrequest}">
+        <!-- Các trường đăng ký -->
+        <label for="userName">User Name:</label>
+        <input type="text" id="userName" name="userName" required><br><br>
+        <div th:if="${#fields.hasErrors('userName')}" th:errors="*{userName}"></div><br>
+
+        <label for="fullName">Full Name:</label>
+        <input type="text" id="fullName" name="fullName" required><br><br>
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <label for="confirmPassword">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" required><br>
+        <div th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></div><br>
+
+        <label for="phoneNumber">Phone Number:</label>
+        <input type="text" id="phoneNumber" name="phoneNumber" required><br><br>
+
+
+        <input type="submit" value="Register">
+    </form>
+</body>
+</html>
+
+
+
+
+
+

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Management</title>
+</head>
+<body>
+    <h1>Home Page</h1>
+    <th:block th:if="${userDTO != null}">
+        <a href="/logout" th:text="|Logout as ${userDTO.fullName}|">Logout</a></br></br>
+        <a href="/admin">Admin</a>
+    </th:block>
+    <th:block th:if="${userDTO == null}">
+        <a href="/login">Login</a></br></br>
+
+        <a href="/register">Register</a>
+    </th:block>
+</body>
+</html>
